@@ -3,23 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kontakt - Vatten Webbshop</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-
+        <h1>Vatten Webbshop</h1>
+        <nav>
+        <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="products.html">Produkter</a></li>
+            <li><a href="about.html">Om Oss</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="privacy.html">Integritet</a></li>
+        </ul>
+    </nav>
     </header>
 
-    <nav>
-        
-    </nav>
-
     <main>
-        
+        <section>
+            <h2>Kontaktuppgifter</h2>
+            <p>Har du frågor eller behöver hjälp?</p>
+            <p>Telefon: 0771-123456</p>
+            <p>E-post: info@vattenwebbshop.se</p>
+        </section>
+
+        <section>
+            <h2>Kontakta oss</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="subject">Välj ärende:</label>
+                    <select id="subject" name="subject">
+                        <option value="allmant">Allmän fråga</option>
+                        <option value="bestallning">Beställning & Leverans</option>
+                        <option value="support">Support & Reklamation</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Meddelande:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Skriv ditt meddelande här..."></textarea>
+                </div>
+                <button type="submit">Skicka</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Hantering av personuppgifter</h2>
+            <p>
+                När du skickar ett meddelande till oss behandlas dina personuppgifter i syfte att hantera och besvara ditt ärende. Läs mer om dina rättigheter och hur vi behandlar personuppgifter i vår <a href="privacy.html">integritetspolicy</a>.
+            </p>
+        </section>
     </main>
 
     <footer>
-        
+        <a href="contact.html">Kontakta oss</a>
+        <p>© 2024 Vatten Webbshop. Alla rättigheter förbehållna.</p>
+        <a href="privacy.html">Integritetspolicy</a>
     </footer>
 </body>
 </html>
