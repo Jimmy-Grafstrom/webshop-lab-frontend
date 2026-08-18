@@ -12,6 +12,8 @@
   --bg-card: #ffffff;
   --border-color: #e2e8f0;
   --border-input: #cbd5e1;
+  --gold: #facc15;
+  --gold-dark: #b45309;
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -203,27 +205,53 @@ article h3 {
   color: var(--primary-dark);
 }
 
-article .price {
-    background-color: var(--primary-light);
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--primary);
-  border-radius: var(--radius-sm);
-  border-width: 0.01rem;
-  width: fit-content;
-  height: fit-content;
-  padding: 0.7rem 0.7rem;
-  color: var(--primary);
-  margin-top: auto;
-}
-article .price:hover {
-  background-color: var(#ffffff);
-  color: 
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+    article .price {
+        display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(170deg, var(--gold) 20%, var(--gold-dark) 100%);
+      color: var(--primary-dark);
+      font-size: 0.65rem;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-sm);
+      width: fit-content;
+      padding: 0.7rem 0.75rem;
+
+      margin:auto
+      
+    }
+
+        /* Det osynliga ljusbandet */
+    article .price::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.75) 50%,
+        transparent 100%
+      );
+      transform: skewX(-20deg);
+      pointer-events: none;
+      transition: left 0s;
+    }
+
+    /* Ljuset sveper över prislappen vid hover */
+    article .price:hover::after,
+    article:hover .price::after {
+      left: 150%;
+      transition: left 0.6s ease-in-out;
+    }
+
+
 
 /* ==========================================================================
    6. Formulär (Contact)
