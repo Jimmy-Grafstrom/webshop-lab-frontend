@@ -159,10 +159,13 @@ main a:focus {
    ========================================================================== */
 article {
   background: var(--bg-page);
+  display: flex;
+    flex-direction: column;
+    height: 100%;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -171,6 +174,55 @@ article {
 article:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+article img {
+  margin-top: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  max-height: 150px;
+}
+
+article p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.6rem;
+  color: var(--text-dark);
+  max-height: 3px;
+}
+
+article h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+  color: var(--primary-dark);
+}
+
+article .price {
+    background-color: var(--primary-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  border-width: 0.01rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.7rem 0.7rem;
+  color: var(--primary);
+  margin-top: auto;
+}
+article .price:hover {
+  background-color: var(#ffffff);
+  color: 
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* ==========================================================================
