@@ -146,7 +146,13 @@ li {
     margin-bottom: 0.4rem;
 }
 
-img,
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-top: 0.5rem;
+}
+
 video {
     max-width: 100%;
     height: 500px;
@@ -168,7 +174,7 @@ main a:focus {
 }
 
 /* ==========================================================================
-   5. Produktkort (Products)
+   5. Produktkort (Produktsidan)
    ========================================================================== */
 #product-slogan {
     display: flex;
@@ -180,8 +186,7 @@ main a:focus {
     top: 1rem;
     right: 1rem;
     background: linear-gradient(var(--secondary-lighter) 5%, var(--primary), var(--primary-light) 97%);
-    color: var(--primary-dark);
-    border: 1px wavy var(--border-color);
+    color: var(--border-color);
     padding: 5px;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -199,7 +204,6 @@ main a:focus {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
@@ -231,7 +235,6 @@ main a:focus {
     margin-top: auto;
     border-radius: var(--radius-md);
     object-fit: cover;
-
 }
 
 .product-grid article p {
@@ -292,6 +295,9 @@ main a:focus {
     transition: left 0.6s ease-in-out;
 }
 
+/* ==========================================================================
+   6. Utvalda produkter (Startsida)
+   ========================================================================== */
 .featured-products {
     display: flex;
     flex-wrap: wrap;
@@ -299,11 +305,22 @@ main a:focus {
 
 .featured-product {
     width: 33.333%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
+.featured-product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-top: auto;
+}
 
 /* ==========================================================================
-   6. Formulär (Contact)
+   7. Formulär (Contact)
    ========================================================================== */
 form {
     display: flex;
@@ -381,11 +398,11 @@ input[type="submit"]:active {
 }
 
 /* ==========================================================================
-   7. Footer
+   8. Footer
    ========================================================================== */
 footer {
     background: linear-gradient(to bottom, var(--secondary) 0%, var(--primary-dark) 100%);
-    color: #94a3b8;
+    color: var(--text-muted);
     text-align: center;
     padding: 1.5rem;
     margin-top: auto;
@@ -403,4 +420,21 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* ==========================================================================
+   9. Responsivitet (Media Queries)
+   ========================================================================== */
+/* Surfplatta (max 900px) -> 2 produkter per rad (50%) */
+@media (max-width: 900px) {
+    .featured-product {
+        width: 50%;
+    }
+}
+
+/* Mobil (max 600px) -> 1 produkt per rad (100%) */
+@media (max-width: 600px) {
+    .featured-product {
+        width: 100%;
+    }
 }
