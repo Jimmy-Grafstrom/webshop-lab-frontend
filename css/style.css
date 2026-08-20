@@ -4,8 +4,9 @@
 :root {
     --primary: #0284c7;
     --secondary: #003961;
+    --secondary-lighter: #04477a;
     --primary-dark: #002333;
-    --primary-light: #e0f2fe;
+    --primary-light: #c1dfff;
     --text-main: #10111e;
     --text-muted: rgb(133 154 182 / 0.7);
     --text-dark: #0f172a;
@@ -178,7 +179,7 @@ main a:focus {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(var(--primary), var(--primary-light) 97%);
+    background: linear-gradient(var(--secondary-lighter) 5%, var(--primary), var(--primary-light) 97%);
     color: var(--primary-dark);
     border: 1px wavy var(--border-color);
     padding: 5px;
