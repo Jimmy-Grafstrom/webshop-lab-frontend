@@ -292,6 +292,15 @@ main a:focus {
     transition: left 0.6s ease-in-out;
 }
 
+.featured-products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured-product {
+    width: 33.333%;
+}
+
 
 /* ==========================================================================
    6. Formulär (Contact)
