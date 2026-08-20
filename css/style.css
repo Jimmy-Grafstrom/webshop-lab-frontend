@@ -6,7 +6,7 @@
     --secondary: #003961;
     --primary-dark: #002333;
     --primary-light: #e0f2fe;
-    --text-main: #1e293b;
+    --text-main: #10111e;
     --text-muted: rgb(133 154 182 / 0.7);
     --text-dark: #0f172a;
     --bg-page: #f8fafc;
@@ -56,6 +56,13 @@ header {
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow-md);
     height: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.35s ease-in-out;
+}
+header.header-hidden {
+    transform: translateY(-100%);
 }
 
 header h1 {
@@ -123,7 +130,7 @@ h3 {
 
 p {
     margin-bottom: 0.75rem;
-    color: var(--text-muted);
+    color: var(--text-main);
 }
 
 ul {
