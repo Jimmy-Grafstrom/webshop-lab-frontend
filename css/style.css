@@ -8,16 +8,14 @@
     --primary-dark: #002333;
     --primary-light: #c1dfff;
     --text-main: #10111e;
-    --text-muted: rgb(133 154 182 / 0.7);
+    --text-muted: rgb(151 162 182 / 0.7);
     --text-dark: #0f172a;
     --bg-page: #f8fafc;
     --bg-card: #ffffff;
     --border-color: #e2e8f0;
     --border-input: #cbd5e1;
-    --gold: #facc15;
-    --gold-dark: #b45309;
-    --badge-color: #dc3535;
-    --badge-color-secondary: #ffa5a5;
+    --gold: #ffd64c;
+    --gold-dark: #af6832;
     --radius-sm: 6px;
     --radius-md: 8px;
     --radius-lg: 12px;
@@ -295,6 +293,31 @@ main a:focus {
     transition: left 0.6s ease-in-out;
 }
 
+.product-grid .price:active,
+.featured-product .price:active {
+    background: var(--gold-dark);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, var(--gold) 20%, var(--gold-dark) 100%);
+    color: var(--primary-dark);
+    padding: 0.75rem;
+    border: 3px solid #6c4e28;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 2000;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+.toast.show {
+    opacity: 1;
+    right: 20px;
+    transition: opacity 0.2s ease-out;
+}
 /* ==========================================================================
    5.1. Produktsidan layout
    ========================================================================== */
@@ -406,7 +429,6 @@ input[type="submit"]:active {
    ========================================================================== */
 footer {
     background: linear-gradient(to bottom, var(--secondary) 0%, var(--primary-dark) 100%);
-    color: var(--text-muted);
     text-align: center;
     padding: 1.5rem;
     margin-top: auto;
@@ -415,6 +437,10 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+}
+
+footer p {
+    color: var(--text-muted);
 }
 
 footer a {
